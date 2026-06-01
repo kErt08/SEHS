@@ -1,0 +1,539 @@
+/**
+ * Sta. Elena SPTMS — Responsive layout (mobile, tablet, desktop)
+ */
+
+/* ── Global foundations ── */
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+img,
+video {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Touch-friendly controls on phones/tablets */
+@media (hover: none) and (pointer: coarse) {
+  .btn,
+  .btn-hero-login,
+  .btn-card-login,
+  .btn-card-secondary,
+  .dash-nav-link,
+  .dash-menu-btn,
+  .dash-icon-btn,
+  .portal-hero__dot,
+  .admin-post-toggle {
+    min-height: 44px;
+  }
+
+  .dash-nav-link {
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+  }
+
+  .feature-card:hover {
+    transform: none;
+  }
+
+  .portal-card:hover {
+    transform: none;
+  }
+}
+
+/* ── LOGIN / PORTAL PAGE ── */
+@media (max-width: 1100px) {
+  .portal-cards {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: none;
+  }
+}
+
+@media (max-width: 960px) {
+  .portal-hero {
+    grid-template-columns: 1fr;
+    max-height: none;
+  }
+
+  .portal-hero__visual,
+  .portal-hero__slides {
+    min-height: 200px;
+    max-height: 42vh;
+  }
+
+  .portal-hero__panel {
+    padding: 2rem 1.5rem 2.25rem;
+  }
+
+  .portal-hero__panel h1 {
+    font-size: 1.65rem;
+  }
+
+  .portal-cards {
+    grid-template-columns: 1fr;
+    max-width: 520px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .portal-quicknav {
+    gap: clamp(1.25rem, 5vw, 2.5rem);
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .portal-topbar {
+    flex-wrap: wrap;
+    gap: 0.5rem 0.75rem;
+    padding: 0.65rem 1rem;
+    padding-top: max(0.65rem, env(safe-area-inset-top));
+  }
+
+  .portal-topbar__brand {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .portal-topbar__brand span {
+    font-size: 0.92rem;
+    line-height: 1.25;
+  }
+
+  .portal-topbar__tag {
+    width: 100%;
+    text-align: center;
+    font-size: 0.75rem;
+  }
+
+  .portal-hero__visual,
+  .portal-hero__slides {
+    min-height: 180px;
+    max-height: 36vh;
+  }
+
+  .btn-hero-login {
+    min-width: 100%;
+    max-width: 280px;
+  }
+
+  .portal-cards {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    max-width: none;
+  }
+
+  .portal-footer {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-bottom: max(1.25rem, env(safe-area-inset-bottom));
+    font-size: 0.72rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .portal-quicknav {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.75rem;
+    padding: 1.25rem 1rem;
+  }
+
+  .quicknav-item span {
+    font-size: 0.78rem;
+    text-align: center;
+  }
+
+  .quicknav-icon {
+    width: 48px;
+    height: 48px;
+    margin: 0 auto;
+  }
+
+  .portal-card__actions {
+    flex-direction: column;
+  }
+
+  .portal-card__actions button {
+    width: 100%;
+  }
+
+  /* Login modal: near full-screen on phones */
+  .login-modal {
+    padding: 0;
+    align-items: flex-end;
+  }
+
+  .login-modal__box {
+    max-width: none;
+    width: 100%;
+    border-radius: 20px 20px 0 0;
+    max-height: 92vh;
+    max-height: 92dvh;
+    overflow-y: auto;
+    padding: 1.5rem 1.25rem;
+    padding-bottom: max(1.5rem, env(safe-area-inset-bottom));
+  }
+
+  .login-modal__close {
+    top: 0.65rem;
+    right: 0.65rem;
+  }
+}
+
+@media (max-width: 380px) {
+  .portal-topbar__brand span {
+    font-size: 0.82rem;
+  }
+
+  .sehs-logo--sm {
+    width: 34px !important;
+    height: 34px !important;
+  }
+
+  .portal-hero__panel h1 {
+    font-size: 1.35rem;
+  }
+
+  .portal-quicknav {
+    grid-template-columns: 1fr;
+  }
+
+  .quicknav-item {
+    flex-direction: row;
+    justify-content: flex-start;
+    width: 100%;
+    max-width: 200px;
+    margin: 0 auto;
+  }
+}
+
+/* ── DASHBOARD ── */
+@media (max-width: 1280px) {
+  .dash-card-row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .dash-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .dash-panel {
+    width: 280px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .dash-panel {
+    display: none !important;
+  }
+
+  .dash-layout--full .dash-main {
+    max-width: 100%;
+  }
+
+  .welcome-banner {
+    min-height: auto;
+    padding: 1.5rem 1.25rem;
+  }
+
+  .welcome-banner__text {
+    max-width: 65%;
+  }
+
+  .welcome-banner__art {
+    display: none;
+  }
+
+  .welcome-banner__logo {
+    width: 56px !important;
+    height: 56px !important;
+    right: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .dash-sidebar {
+    width: min(300px, 88vw);
+    transform: translateX(-100%);
+    box-shadow: none;
+  }
+
+  .dash-sidebar.open {
+    transform: translateX(0);
+    box-shadow: 8px 0 40px rgba(0, 0, 0, 0.2);
+  }
+
+  .dash-workspace {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  .dash-menu-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 44px;
+    min-height: 44px;
+  }
+
+  .dash-topbar {
+    flex-wrap: wrap;
+    padding: 0.65rem 1rem;
+    padding-top: max(0.65rem, env(safe-area-inset-top));
+    gap: 0.65rem;
+  }
+
+  .dash-search {
+    order: 3;
+    flex: 1 1 100%;
+    max-width: none;
+  }
+
+  .dash-topbar__actions {
+    margin-left: auto;
+  }
+
+  .dash-live {
+    display: none;
+  }
+
+  .dash-layout {
+    padding: 0.85rem;
+    padding-bottom: max(0.85rem, env(safe-area-inset-bottom));
+  }
+
+  .dash-page-head h1 {
+    font-size: 1.2rem;
+  }
+
+  .dash-card-row,
+  .dash-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .welcome-banner {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1.35rem 1.15rem;
+  }
+
+  .welcome-banner__text {
+    max-width: 100%;
+    padding-right: 0;
+  }
+
+  .welcome-banner__logo {
+    position: static;
+    transform: none;
+    margin-top: 1rem;
+    align-self: center;
+  }
+
+  .dash-module {
+    padding: 1.15rem 1rem;
+  }
+
+  .filters {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .filters .form-group {
+    min-width: 0;
+    width: 100%;
+  }
+
+  .profile-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .doc-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .doc-item__actions {
+    width: 100%;
+  }
+
+  .doc-item__actions .btn {
+    flex: 1;
+  }
+
+  .feed-item--row,
+  .event-card--row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .btn-delete {
+    width: 100%;
+    margin-top: 0.5rem;
+  }
+
+  .flow-item {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .flow-item .code {
+    min-width: 0;
+  }
+
+  .admin-post-form__actions {
+    flex-direction: column;
+  }
+
+  .admin-post-form__actions .btn {
+    width: 100%;
+  }
+
+  .tracker-controls {
+    flex-direction: column;
+  }
+
+  .tracker-controls .btn {
+    width: 100%;
+  }
+
+  .overlay.show {
+    display: block;
+    z-index: 150;
+  }
+}
+
+@media (max-width: 600px) {
+  .dash-topbar__actions .dash-icon-btn:nth-child(1) {
+    display: none; /* hide theme toggle on very small screens */
+  }
+
+  .dash-avatar {
+    width: 40px;
+    height: 40px;
+    font-size: 0.75rem;
+  }
+
+  .dash-section__head {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.35rem;
+  }
+
+  .welcome-banner__text h2 {
+    font-size: 1.15rem;
+  }
+
+  .form-row-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .calendar-grid {
+    font-size: 0.7rem;
+  }
+
+  .cal-day {
+    min-height: 52px;
+    padding: 0.2rem;
+  }
+
+  .cal-event {
+    font-size: 0.55rem;
+    padding: 0.1rem;
+  }
+
+  .cor-preview {
+    padding: 1rem;
+    overflow-x: auto;
+  }
+
+  .widget-list-item {
+    flex-wrap: wrap;
+  }
+
+  .widget-list-item__action {
+    width: 100%;
+    margin-top: 0.35rem;
+    padding: 0.5rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .dash-sidebar__brand strong {
+    font-size: 0.88rem;
+  }
+
+  .dash-sidebar__brand span {
+    font-size: 0.65rem;
+  }
+
+  .dash-stat__value {
+    font-size: 1.25rem;
+  }
+
+  .feature-card__icon {
+    width: 60px;
+    height: 60px;
+    font-size: 1.6rem;
+  }
+}
+
+/* ── Shared: scrollable tables ── */
+.table-scroll {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin-bottom: 0.5rem;
+  border-radius: var(--radius, 8px);
+  border: 1px solid var(--border, #d4e8f5);
+}
+
+.table-scroll .data-table {
+  min-width: 520px;
+}
+
+.table-scroll .data-table th,
+.table-scroll .data-table td {
+  white-space: nowrap;
+}
+
+.table-scroll .data-table td:nth-child(2) {
+  white-space: normal;
+  min-width: 140px;
+}
+
+/* Landscape phones: slightly shorter hero */
+@media (max-height: 500px) and (orientation: landscape) {
+  .portal-hero__visual,
+  .portal-hero__slides {
+    min-height: 140px;
+    max-height: 55vh;
+  }
+
+  .portal-hero__panel {
+    padding: 1rem 1.25rem;
+  }
+
+  .portal-hero__tagline {
+    margin: 0.5rem 0 1rem;
+  }
+}
+
+/* Large desktops: cap content width for readability */
+@media (min-width: 1400px) {
+  .portal-cards {
+    max-width: 1280px;
+  }
+
+  .dash-main {
+    max-width: 1100px;
+  }
+}
+
+@media (min-width: 1600px) {
+  .dash-layout:not(.dash-layout--full) .dash-main {
+    max-width: 1200px;
+  }
+}
